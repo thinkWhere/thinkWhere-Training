@@ -1,0 +1,5 @@
+inputLayer = "C:/QGIS_Advanced/04_Processing_Automation/places_29902.gpkg"
+
+result = processing.run("native:buffer", {'INPUT':inputLayer,'DISTANCE':500,'SEGMENTS':25,'END_CAP_STYLE':0,'JOIN_STYLE':0,'MITER_LIMIT':2,'DISSOLVE':True,'OUTPUT':'memory:'})
+
+QgsProject.instance().addMapLayer(result['OUTPUT'])
